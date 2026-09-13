@@ -55,13 +55,13 @@ Open your browser and navigate to:
 
 ## Roadmap & Phases
 
-- [x] **Phase 1 (In Progress): Frontend with In-Memory Dummy Backend & Testing**
+- [x] **Phase 1: Frontend with In-Memory Dummy Backend & Testing (Completed)**
   - [x] Issue #1: Project scaffold, `uv` environment & repository interface
   - [x] Issue #2: Board layout, columns, and seeded cards rendering (Stitch design)
-  - [ ] Issue #3: Inline card creation & deletion with dynamic counter updates
-  - [ ] Issue #4: Card edit modal with color tagging
-  - [ ] Issue #5: SortableJS drag-and-drop card reordering
-  - [ ] Issue #6: Automated testing suite for Phase 1
+  - [x] Issue #3: Inline card creation & deletion with dynamic counter updates
+  - [x] Issue #4: Card edit modal with color tagging
+  - [x] Issue #5: SortableJS drag-and-drop card reordering
+  - [x] Issue #6: Automated testing suite for Phase 1
 - [ ] **Phase 2: Persistent Backend Integration (SQLite + SQLModel) & Testing**
   - [ ] Issues #7 – #10: Database engine, float ranking math, persistence across restarts, and integration tests
 - [ ] **Phase 3: Local Deployment via Docker Compose**
