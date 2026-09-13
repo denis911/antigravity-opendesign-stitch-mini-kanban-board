@@ -61,9 +61,11 @@ Open your browser and navigate to:
   - [x] Issue #3: Inline card creation & deletion with dynamic counter updates
   - [x] Issue #4: Card edit modal with color tagging
   - [x] Issue #5: SortableJS drag-and-drop card reordering
-  - [x] Issue #6: Automated testing suite for Phase 1
-- [ ] **Phase 2: Persistent Backend Integration (SQLite + SQLModel) & Testing**
-  - [ ] Issues #7 – #10: Database engine, float ranking math, persistence across restarts, and integration tests
+- [x] **Phase 2: Persistent Backend Integration (SQLite + SQLModel) & Testing (Completed)**
+  - [x] Issue #7: SQLModel entities, SQLite database engine & auto-seeding
+  - [x] Issue #8: SQLiteBoardRepository & float ranking engine with rebalancing
+  - [x] Issue #9: Connect FastAPI routes to SQLite repository & verify persistence
+  - [x] Issue #10: Automated integration & persistence test suite
 - [ ] **Phase 3: Local Deployment via Docker Compose**
   - [ ] Issues #11 – #12: Multi-stage Dockerfile with `uv`, volume persistence, and healthchecks
 
