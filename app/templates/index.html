@@ -135,5 +135,37 @@
       if (input) input.focus();
     }
   });
+
+  // SortableJS Drag-and-Drop bridge to HTMX
+  function initKanbanSortables() {
+    document.querySelectorAll('.kanban-cards-container').forEach(col => {
+      if (col._sortable) return;
+      col._sortable = new Sortable(col, {
+        group: 'kanban-board',
+        animation: 150,
+        ghostClass: 'opacity-40',
+        draggable: '.kanban-card',
+        filter: '.empty-placeholder',
+        onEnd: function (evt) {
+          const itemEl = evt.item;
+          const targetColId = evt.to.dataset.columnId;
+          const prevCardId = itemEl.previousElementSibling?.dataset?.cardId || '';
+          const nextCardId = itemEl.nextElementSibling?.dataset?.cardId || '';
+
+          htmx.ajax('PATCH', `/cards/${itemEl.dataset.cardId}/move`, {
+            values: {
+              target_column_id: targetColId,
+              prev_card_id: prevCardId,
+              next_card_id: nextCardId
+            },
+            swap: 'none'
+          });
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', initKanbanSortables);
+  document.addEventListener('htmx:afterSettle', initKanbanSortables);
 </script>
 {% endblock %}

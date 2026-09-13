@@ -192,6 +192,41 @@ async def delete_card(
     return HTMLResponse(content=oob_counter, status_code=200)
 
 
+@app.patch("/cards/{card_id}/move", response_class=HTMLResponse)
+async def move_card(
+    card_id: str,
+    target_column_id: str = Form(...),
+    prev_card_id: Optional[str] = Form(None),
+    next_card_id: Optional[str] = Form(None),
+    repo: BoardRepository = Depends(get_repository)
+):
+    card = repo.get_card(card_id)
+    if not card:
+        raise HTTPException(status_code=404, detail="Card not found")
+
+    from_column_id = card.column_id
+    clean_prev_id = prev_card_id.strip() if prev_card_id and prev_card_id.strip() else None
+    clean_next_id = next_card_id.strip() if next_card_id and next_card_id.strip() else None
+
+    repo.move_card(
+        card_id=card_id,
+        target_column_id=target_column_id,
+        prev_card_id=clean_prev_id,
+        next_card_id=clean_next_id
+    )
+
+    from_col = repo.get_column(from_column_id)
+    from_count = len(from_col.cards) if from_col else 0
+
+    to_col = repo.get_column(target_column_id)
+    to_count = len(to_col.cards) if to_col else 0
+
+    oob_from_counter = f'<span id="counter-{from_column_id}" hx-swap-oob="true" class="font-mono text-[11px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded font-medium">{from_count:02d}</span>'
+    oob_to_counter = f'<span id="counter-{target_column_id}" hx-swap-oob="true" class="font-mono text-[11px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded font-medium">{to_count:02d}</span>'
+
+    return HTMLResponse(content=f"{oob_from_counter}\n{oob_to_counter}", status_code=200)
+
+
 @app.get("/api/columns")
 async def api_columns(repo: BoardRepository = Depends(get_repository)):
     return repo.list_columns()
