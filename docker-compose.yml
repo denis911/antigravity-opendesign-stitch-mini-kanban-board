@@ -1,0 +1,17 @@
+services:
+  kanban:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: fastkanban
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./data/kanban.db
+      - REPO_TYPE=sqlite
+    volumes:
+      - kanban-data:/app/data
+    restart: unless-stopped
+
+volumes:
+  kanban-data:
