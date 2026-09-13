@@ -17,7 +17,10 @@
 
     <button class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors"
             title="Add card"
-            aria-label="Add card to {{ column.title }}">
+            aria-label="Add card to {{ column.title }}"
+            hx-get="/cards/new?col_id={{ column.id }}"
+            hx-target="#add-card-container-{{ column.id }}"
+            hx-swap="innerHTML">
       <span class="material-symbols-outlined text-[16px]">add</span>
     </button>
   </div>
@@ -31,9 +34,20 @@
     {% endfor %}
 
     {% if column.cards|length == 0 %}
-      <div class="empty-placeholder text-center py-8 text-xs text-outline font-mono border-2 border-dashed border-outline-variant/40 rounded-lg">
+      <div id="empty-{{ column.id }}" class="empty-placeholder text-center py-8 text-xs text-outline font-mono border-2 border-dashed border-outline-variant/40 rounded-lg">
         Drop cards here
       </div>
     {% endif %}
+  </div>
+
+  <!-- Bottom Add Card Container -->
+  <div id="add-card-container-{{ column.id }}" class="mt-2 pt-2 border-t border-outline-variant/20">
+    <button class="w-full py-1.5 px-2.5 rounded-lg border border-dashed border-outline-variant/50 hover:border-outline text-secondary hover:text-on-surface font-mono text-xs flex items-center justify-center gap-1.5 hover:bg-surface-container transition-all"
+            hx-get="/cards/new?col_id={{ column.id }}"
+            hx-target="#add-card-container-{{ column.id }}"
+            hx-swap="innerHTML">
+      <span class="material-symbols-outlined text-[15px]">add</span>
+      <span>Add Card</span>
+    </button>
   </div>
 </div>

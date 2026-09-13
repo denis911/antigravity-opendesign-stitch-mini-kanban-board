@@ -30,6 +30,19 @@
           {{ card.tag }}
         </span>
       {% endif %}
+
+      <!-- Delete Button with Confirmation -->
+      <button type="button"
+              class="delete-card-btn opacity-70 sm:opacity-0 sm:group-hover:opacity-100 w-5 h-5 flex items-center justify-center rounded text-outline hover:text-cinnabar hover:bg-error-container/30 transition-all"
+              title="Delete card"
+              aria-label="Delete card {{ card.title }}"
+              hx-delete="/cards/{{ card.id }}"
+              hx-target="#card-{{ card.id }}"
+              hx-swap="outerHTML"
+              hx-confirm="Are you sure you want to delete this card?"
+              onclick="event.stopPropagation();">
+        <span class="material-symbols-outlined text-[14px]">delete</span>
+      </button>
     </div>
   </div>
 
