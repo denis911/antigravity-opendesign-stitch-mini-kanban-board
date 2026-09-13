@@ -1,0 +1,39 @@
+{# Column Component matching Stitch Zen Design #}
+<div id="{{ column.id }}"
+     class="kanban-column snap-center shrink-0 w-[85vw] sm:w-[320px] max-w-[340px] flex flex-col bg-surface-container-low rounded-xl p-3 border border-outline-variant/20 shadow-sm"
+     data-column-id="{{ column.id }}">
+
+  <!-- Column Header -->
+  <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 mb-3">
+    <div class="flex items-center gap-2">
+      <span class="font-mono text-xs font-semibold text-on-surface tracking-wider uppercase">
+        {{ column.title }}
+      </span>
+      <span id="counter-{{ column.id }}"
+            class="font-mono text-[11px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded font-medium">
+        {{ "%02d" | format(column.cards|length) }}
+      </span>
+    </div>
+
+    <button class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors"
+            title="Add card"
+            aria-label="Add card to {{ column.title }}">
+      <span class="material-symbols-outlined text-[16px]">add</span>
+    </button>
+  </div>
+
+  <!-- Cards List Container (SortableJS Target) -->
+  <div id="cards-{{ column.id }}"
+       class="kanban-cards-container flex flex-col gap-2 min-h-[120px] flex-1 transition-colors"
+       data-column-id="{{ column.id }}">
+    {% for card in column.cards %}
+      {% include "components/card.html" %}
+    {% endfor %}
+
+    {% if column.cards|length == 0 %}
+      <div class="empty-placeholder text-center py-8 text-xs text-outline font-mono border-2 border-dashed border-outline-variant/40 rounded-lg">
+        Drop cards here
+      </div>
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,61 @@
+{# Individual Card Component matching Stitch Zen Design #}
+<div id="card-{{ card.id }}"
+     class="kanban-card group bg-surface-container-lowest p-3 rounded-lg shadow-sm border border-outline-variant/30 flex flex-col gap-2 cursor-pointer hover:border-outline/40 hover:shadow transition-all relative"
+     data-card-id="{{ card.id }}">
+
+  <!-- Card Header / Meta tags -->
+  <div class="flex items-center justify-between">
+    <div class="flex items-center gap-1.5">
+      <span class="font-mono text-xs text-secondary font-medium tracking-tight">
+        {{ card.code_id or "TASK-" ~ card.id[-4:] }}
+      </span>
+
+      <!-- Priority Color Dot -->
+      {% if card.color == 'red' %}
+        <span class="w-2 h-2 rounded-full bg-cinnabar" title="Priority: Urgent"></span>
+      {% elif card.color == 'yellow' %}
+        <span class="w-2 h-2 rounded-full bg-amber-raw" title="Priority: In Progress"></span>
+      {% elif card.color == 'green' %}
+        <span class="w-2 h-2 rounded-full bg-lichen" title="Priority: Done"></span>
+      {% elif card.color == 'blue' %}
+        <span class="w-2 h-2 rounded-full bg-indigo-stone" title="Priority: Info"></span>
+      {% else %}
+        <span class="w-2 h-2 rounded-full bg-outline" title="Priority: Normal"></span>
+      {% endif %}
+    </div>
+
+    <div class="flex items-center gap-1">
+      {% if card.tag %}
+        <span class="font-mono text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">
+          {{ card.tag }}
+        </span>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- Card Title -->
+  <div class="text-sm font-medium text-on-surface leading-snug text-left">
+    {{ card.title }}
+  </div>
+
+  {% if card.description %}
+    <div class="text-xs text-on-surface-variant/80 line-clamp-2 text-left">
+      {{ card.description }}
+    </div>
+  {% endif %}
+
+  <!-- Card Footer: Metadata & Assignee -->
+  <div class="flex items-center justify-between pt-1 text-xs text-secondary">
+    <div class="flex items-center gap-2">
+      <span class="flex items-center gap-0.5">
+        <span class="material-symbols-outlined text-[13px]">calendar_today</span>
+        <span>Oct 18</span>
+      </span>
+    </div>
+
+    <!-- Assignee avatar / initials badge -->
+    <div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center font-mono text-[9px] text-on-surface-variant font-medium">
+      {{ card.assignee or "ZN" }}
+    </div>
+  </div>
+</div>
