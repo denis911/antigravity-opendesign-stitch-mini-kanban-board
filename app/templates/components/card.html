@@ -1,7 +1,10 @@
 {# Individual Card Component matching Stitch Zen Design #}
 <div id="card-{{ card.id }}"
      class="kanban-card group bg-surface-container-lowest p-3 rounded-lg shadow-sm border border-outline-variant/30 flex flex-col gap-2 cursor-pointer hover:border-outline/40 hover:shadow transition-all relative"
-     data-card-id="{{ card.id }}">
+     data-card-id="{{ card.id }}"
+     hx-get="/cards/{{ card.id }}/edit"
+     hx-target="#modal-container"
+     hx-swap="innerHTML">
 
   <!-- Card Header / Meta tags -->
   <div class="flex items-center justify-between">

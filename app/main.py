@@ -57,6 +57,67 @@ async def card_cancel_form(col_id: str):
     """
 
 
+@app.get("/cards/{card_id}/edit", response_class=HTMLResponse)
+async def edit_card_modal(
+    request: Request,
+    card_id: str,
+    repo: BoardRepository = Depends(get_repository)
+):
+    card = repo.get_card(card_id)
+    if not card:
+        raise HTTPException(status_code=404, detail="Card not found")
+    return templates.TemplateResponse(
+        request=request,
+        name="components/modal_edit.html",
+        context={"card": card}
+    )
+
+
+@app.put("/cards/{card_id}", response_class=HTMLResponse)
+async def update_card(
+    request: Request,
+    card_id: str,
+    title: str = Form(""),
+    description: Optional[str] = Form(""),
+    color: Optional[str] = Form("default"),
+    repo: BoardRepository = Depends(get_repository)
+):
+    card = repo.get_card(card_id)
+    if not card:
+        raise HTTPException(status_code=404, detail="Card not found")
+
+    cleaned_title = title.strip()
+    if not cleaned_title:
+        # Re-render modal with error
+        response = templates.TemplateResponse(
+            request=request,
+            name="components/modal_edit.html",
+            context={
+                "card": card,
+                "error": "Title cannot be empty"
+            }
+        )
+        response.headers["HX-Retarget"] = "#modal-container"
+        response.headers["HX-Reswap"] = "innerHTML"
+        return response
+
+    updated_card = repo.update_card(
+        card_id=card_id,
+        title=cleaned_title,
+        description=description,
+        color=color
+    )
+
+    # Render updated card fragment
+    card_html = templates.get_template("components/card.html").render({"card": updated_card})
+
+    # Out-of-band swap to close and clear the modal container
+    oob_close_modal = '<div id="modal-container" hx-swap-oob="innerHTML"></div>'
+
+    combined_html = f"{card_html}\n{oob_close_modal}"
+    return HTMLResponse(content=combined_html, status_code=200)
+
+
 @app.post("/cards", response_class=HTMLResponse)
 async def create_card(
     request: Request,
@@ -67,7 +128,6 @@ async def create_card(
 ):
     cleaned_title = title.strip()
     if not cleaned_title:
-        # Return form with inline error
         response = templates.TemplateResponse(
             request=request,
             name="components/card_form.html",
