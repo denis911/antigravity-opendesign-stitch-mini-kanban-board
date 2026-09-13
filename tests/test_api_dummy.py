@@ -1,21 +1,22 @@
 import pytest
 from fastapi.testclient import TestClient
-from app.main import app
+from app.main import app as fastapi_app
 from app.dependencies import get_repository
 from app.repositories.memory import InMemoryBoardRepository
+import app.dependencies as deps
 
-client = TestClient(app)
+client = TestClient(fastapi_app)
 
 
 @pytest.fixture(autouse=True)
-def fresh_repo():
+def fresh_repo(monkeypatch):
     """Ensure tests run against a fresh or predictable in-memory repository state."""
-    repo = get_repository()
-    # Reset default seeded data before each test
-    repo.columns.clear()
-    repo.cards.clear()
-    repo._seed_default_data()
-    yield repo
+    mem_repo = InMemoryBoardRepository()
+    monkeypatch.setenv("REPO_TYPE", "memory")
+    monkeypatch.setattr(deps, "_in_memory_repo", mem_repo)
+    fastapi_app.dependency_overrides[get_repository] = lambda: mem_repo
+    yield mem_repo
+    fastapi_app.dependency_overrides.pop(get_repository, None)
 
 
 def test_healthz_endpoint():

@@ -1,14 +1,27 @@
+import os
+from contextlib import asynccontextmanager
 from typing import Optional
 from fastapi import FastAPI, Request, Depends, Form, HTTPException, Response
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from app.repositories.base import BoardRepository
 from app.dependencies import get_repository
+from app.db.session import init_db
+
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Initialize SQLite database schema and seed data on startup if configured
+    if os.getenv("REPO_TYPE", "sqlite").lower() == "sqlite":
+        init_db()
+    yield
+
 
 app = FastAPI(
     title="FastKanban",
     description="Zen Minimalist Kanban board built with FastAPI, HTMX, and Tailwind CSS",
     version="0.1.0",
+    lifespan=lifespan,
 )
 
 templates = Jinja2Templates(directory="app/templates")
