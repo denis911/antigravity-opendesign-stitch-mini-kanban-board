@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed": "#271908", "surface-tint": "#5e5e60", "on-surface-variant": "#45474a", "on-primary-container": "#87878a", "surface-dim": "#dbdad6", "primary": "#07080a", "on-primary-fixed": "#1b1c1e", "on-error": "#ffffff", "on-tertiary-container": "#9b836c", "error": "#ba1a1a", "tertiary-container": "#2c1d0c", "tertiary-fixed": "#fadec2", "surface-container-low": "#f4f4f0", "secondary-fixed": "#e0e2e9", "inverse-surface": "#2f312e", "tertiary": "#100600", "on-error-container": "#93000a", "surface-container-highest": "#e3e2df", "outline": "#76777b", "surface-variant": "#e3e2df", "surface-container-high": "#e9e8e4", "tertiary-fixed-dim": "#ddc2a7", "surface-container-lowest": "#ffffff", "background": "#faf9f5", "on-surface": "#1b1c1a", "on-tertiary": "#ffffff", "on-background": "#1b1c1a", "outline-variant": "#c6c6ca", "on-tertiary-fixed-variant": "#56432f", "surface-bright": "#faf9f5", "primary-fixed-dim": "#c7c6c8", "primary-container": "#1f2022", "surface-container": "#efeeea", "on-primary": "#ffffff", "on-secondary-fixed": "#181c21", "secondary-container": "#e0e2e9", "on-secondary-container": "#61646a", "surface": "#faf9f5", "on-secondary": "#ffffff", "primary-fixed": "#e3e2e4", "inverse-primary": "#c7c6c8", "secondary": "#5b5e64", "secondary-fixed-dim": "#c4c6cd", "error-container": "#ffdad6", "inverse-on-surface": "#f2f1ed", "on-primary-fixed-variant": "#464749", "on-secondary-fixed-variant": "#44474c" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "gutter": "0.75rem", "space-xs": "0.25rem", "gutter-desktop": "1rem", "space-lg": "1rem", "margin": "1rem", "space-sm": "0.375rem", "space-md": "0.625rem", "space-xl": "1.5rem", "margin-desktop": "1.5rem" }, fontFamily: { "body-lg": ["Inter"], "code": ["JetBrains Mono"], "body-md": ["Inter"], "label-sm": ["JetBrains Mono"], "display": ["Inter"], "label-md": ["JetBrains Mono"], "headline-sm": ["Inter"], "headline-md": ["Inter"], "headline-lg": ["Inter"], "body-sm": ["Inter"] }, fontSize: { "body-lg": ["0.9375rem", { lineHeight: "1.5rem", letterSpacing: "-0.005em", fontWeight: "400" }], "code": ["0.75rem", { lineHeight: "1.2rem", letterSpacing: "0", fontWeight: "400" }], "body-md": ["0.8125rem", { lineHeight: "1.25rem", letterSpacing: "-0.002em", fontWeight: "400" }], "label-sm": ["0.6875rem", { lineHeight: "0.875rem", letterSpacing: "0.02em", fontWeight: "400" }], "display": ["1.75rem", { lineHeight: "2.25rem", letterSpacing: "-0.025em", fontWeight: "500" }], "label-md": ["0.75rem", { lineHeight: "1rem", letterSpacing: "-0.01em", fontWeight: "500" }], "headline-sm": ["0.9375rem", { lineHeight: "1.375rem", letterSpacing: "-0.01em", fontWeight: "600" }], "headline-md": ["1.125rem", { lineHeight: "1.625rem", letterSpacing: "-0.015em", fontWeight: "500" }], "headline-lg": ["1.375rem", { lineHeight: "1.875rem", letterSpacing: "-0.02em", fontWeight: "500" }], "body-sm": ["0.75rem", { lineHeight: "1.125rem", letterSpacing: "0em", fontWeight: "400" }] } } } };</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; background-color: #faf9f5; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 350, 'GRAD' 0, 'opsz' 20; display: inline-block; vertical-align: middle; } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-surface text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-surface-container-high"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] pt-safe"><div class="h-28 px-gutter flex flex-col justify-between py-space-sm"><div class="flex items-center justify-between gap-space-sm h-10"><div class="flex items-center gap-space-sm min-w-0"><img alt="Zen Kanban Logo" class="h-8 w-auto object-contain shrink-0" src="https://lh3.googleusercontent.com/aida/AEtjO1UDMnsfO4nIOEuXwz3r0kq-qWHTkvsn445JKLPrLMc9guaGG3Rm_N3wrQ0Xtx_9h3tXxUqtSqbFjg6i-mM9wd5KAaZWIsgxHXAD-hVG3Z12BeVGwnjekimx5z4Q3PnWNv0-drslo7PqDVX9uuen39CGsMMZVJHRlQxjcznPgqQylejXdbPLzdMiaT6e2ocNgeu-odjdgKbtSs5XV1B1HAw5UiwOv-XEoZuoDy1Xn2vNT955-ggbkulKOmg"/><div class="flex items-center gap-space-xs min-w-0"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface truncate">Kanso Studio</span><span class="material-symbols-outlined text-outline text-[16px] shrink-0">unfold_more</span></div></div><div class="flex items-center gap-space-sm shrink-0"><button aria-label="Search workspace" class="w-11 h-11 flex items-center justify-center rounded text-on-surface-variant hover:text-on-surface hover:bg-surface-container-low transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAA6i-zZZDp9JfsRcBPgLTI18BpC6_pTZEPkTk81G4v9kT3_0PW9W2AazxPnA3SgCwPCHEffAnMBvldQxua7515MUguF6NMzDjoMf_jMd175IJnngaljusCME9UqO3uhL2IJ56mihvmgM7OBcCvtw7abncQNbzOfe5EhmdZojCBNa7dk4HvOr47CLxaqNJq2khJ3uGjGoM0i6IKTiw1r9hbdj5WsGTgIMVUAC7ywpElTQJgR57lx3Bx"/></div></div><div class="flex items-center justify-between gap-space-sm overflow-x-auto no-scrollbar py-space-xs"><div class="flex items-center gap-space-xs shrink-0"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Engawa</span><span class="text-outline text-[12px]">/</span><span class="font-code text-code text-on-surface bg-surface-container-low px-space-xs py-0.5 rounded text-left">Sprint 34</span><span class="font-body-sm text-body-sm text-outline hidden">Board</span></div><div class="flex items-center gap-space-xs shrink-0"><button class="h-7 px-space-sm flex items-center gap-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors"><span class="material-symbols-outlined text-[14px]">person</span><span>Assignee</span></button><button class="h-7 px-space-sm flex items-center gap-1 rounded bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-label-sm text-label-sm transition-colors"><span class="material-symbols-outlined text-[14px]">flag</span><span>Priority</span></button></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-28 pb-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Minimalist Secondary Zen Quick-Bar -->
+<div class="px-gutter py-space-sm bg-surface flex flex-col gap-space-sm">
+<!-- Search & Command Affordance -->
+<div class="relative w-full">
+<div class="flex items-center gap-2 bg-surface-container-lowest px-3 py-1.5 rounded-lg shadow-sm">
+<span class="material-symbols-outlined text-outline text-[16px]">filter_list</span>
+<input class="bg-transparent text-on-surface font-body-sm text-body-sm placeholder-outline focus:outline-none w-full" placeholder="Filter issues (press 'f' to focus)..." type="text"/>
+<div class="flex items-center gap-1 shrink-0">
+<kbd class="font-code text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">⌘K</kbd>
+</div>
+</div>
+</div>
+<!-- Filter Pills Row -->
+<div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5">
+<button class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded text-on-surface font-label-sm text-label-sm shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[13px] text-outline">group</span>
+<span>All Assignees</span>
+<span class="material-symbols-outlined text-[13px] text-outline">expand_more</span>
+</button>
+<button class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded text-on-surface font-label-sm text-label-sm shadow-sm shrink-0">
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Priority: High</span>
+<span class="material-symbols-outlined text-[12px] text-outline">close</span>
+</button>
+<button class="flex items-center gap-1 bg-surface-container-lowest px-2 py-1 rounded text-on-surface font-label-sm text-label-sm shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[13px] text-outline">label</span>
+<span>Labels: Core</span>
+<span class="material-symbols-outlined text-[12px] text-outline">close</span>
+</button>
+<button class="flex items-center gap-1 bg-surface-container-low px-2 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm shrink-0 transition-colors">
+<span class="material-symbols-outlined text-[13px]">add</span>
+<span>Filter</span>
+</button>
+</div>
+<!-- Mobile Column Viewport Switcher Tabs -->
+<div class="flex items-center justify-between p-0.5 bg-surface-container-low rounded-lg gap-0.5">
+<button class="flex-1 py-1 px-1.5 rounded text-center font-label-sm text-label-sm bg-surface-container-lowest text-primary font-medium shadow-sm transition-all flex items-center justify-center gap-1" onclick="scrollToColumn('col-backlog')">
+<span>Backlog</span>
+<span class="font-code text-[10px] text-secondary">5</span>
+</button>
+<button class="flex-1 py-1 px-1.5 rounded text-center font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-1" onclick="scrollToColumn('col-in-progress')">
+<span>Active</span>
+<span class="font-code text-[10px] text-secondary">3</span>
+</button>
+<button class="flex-1 py-1 px-1.5 rounded text-center font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-1" onclick="scrollToColumn('col-review')">
+<span>Review</span>
+<span class="font-code text-[10px] text-secondary">2</span>
+</button>
+<button class="flex-1 py-1 px-1.5 rounded text-center font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-all flex items-center justify-center gap-1" onclick="scrollToColumn('col-done')">
+<span>Done</span>
+<span class="font-code text-[10px] text-secondary">8</span>
+</button>
+</div>
+</div>
+<!-- Horizontal Snapping Board Canvas -->
+<div class="flex gap-3 px-gutter overflow-x-auto snap-x snap-mandatory py-2 pb-6 no-scrollbar" id="board-track">
+<!-- COLUMN 1: BACKLOG -->
+<div class="snap-center shrink-0 w-[82vw] max-w-[320px] flex flex-col bg-surface-container-low rounded-xl p-3" id="col-backlog">
+<!-- Column Header -->
+<div class="flex items-center justify-between pb-2.5">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface font-medium tracking-wider uppercase">Backlog</span>
+<span class="font-code text-[11px] text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">05</span>
+</div>
+<button class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Add task">
+<span class="material-symbols-outlined text-[15px]">add</span>
+</button>
+</div>
+<!-- Card Stack -->
+<div class="flex flex-col gap-2">
+<!-- Card 1: Standard Backlog item -->
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm flex flex-col gap-1.5 cursor-pointer active:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-code text-code text-secondary font-medium">ENG-204</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+<span class="font-code text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">perf</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface leading-snug">
+            Decouple IndexedDB sync from rendering loop
+          </div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">check_box</span>
+<span>0/3</span>
+</span>
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">calendar_today</span>
+<span>Oct 18</span>
+</span>
+</div>
+<img class="w-5 h-5 rounded-full object-cover grayscale" data-alt="Black and white minimalist artistic portrait avatar in sumi ink style against clean neutral paper background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrlVy-vpQdV3hKvJOgbIv9yTntKT3sS36Twg6NSVx4E8r8KSKK8OUA1Do--WldvP_XkX5fUfBgoxU7rVegZNlb1-g8cXfyYC1j2a1-oLfWaN8ESvwOHM3G3SVTe2b1sMng13A_FbogMm74528GAScoymeJm1TbrF-y86QtVjaKicH6j_QdEEQ9rF2pNnGBtjVGzWZOvuo4f7pyLGu_9erQMnBiS4FfoltlnbaQgktGKev4_cHy-ASj"/>
+</div>
+</div>
+<!-- Card 2: Micro Card -->
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm flex flex-col gap-1.5 cursor-pointer active:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-code text-code text-secondary font-medium">ENG-209</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+<span class="font-code text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">infra</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface leading-snug">
+            Evaluate Brotli compression for asset distribution
+          </div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">calendar_today</span>
+<span>Oct 22</span>
+</span>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center font-code text-[9px] text-on-surface-variant">KN</div>
+</div>
+</div>
+<!-- Card 3: Backlog with label -->
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm flex flex-col gap-1.5 cursor-pointer active:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-code text-code text-secondary font-medium">DES-88</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+<span class="font-code text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">design</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface leading-snug">
+            Draft wabi-sabi icon set for task priority taxonomy
+          </div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">check_box</span>
+<span>1/4</span>
+</span>
+</div>
+<img class="w-5 h-5 rounded-full object-cover grayscale" data-alt="Monochrome close up portrait of product designer in minimal architectural setting with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjdp41ZOIK5yCQ8K1oAgtTKT26amFd4iTWqrRug80nXPGi189YQwQNaw1zmkoyALtlDCVzf8_pDllt6Yil7ItYVcNOIkuAZtp-Fc8JSxei9F-BSg9umkUaz6xIWOtkNpXaBup8DPtO4kjViEI-ySJ6t73M0ox0Ypr5Usv7qGhACzOLB6uH1MR6Rg4K4fVTHQCdYJeT5uoJ9YZNDBJSoKued1qbw1xU6US5BEzDT7yi2K_4IajfJvfh"/>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUMN 2: IN PROGRESS -->
+<div class="snap-center shrink-0 w-[82vw] max-w-[320px] flex flex-col bg-surface-container-low rounded-xl p-3" id="col-in-progress">
+<!-- Column Header -->
+<div class="flex items-center justify-between pb-2.5">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface font-medium tracking-wider uppercase">In Progress</span>
+<span class="font-code text-[11px] text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">03</span>
+</div>
+<button class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Add task">
+<span class="material-symbols-outlined text-[15px]">add</span>
+</button>
+</div>
+<!-- Card Stack -->
+<div class="flex flex-col gap-2">
+<!-- CARD STATE 1: ACTIVE / SELECTED / FOCUSED GLOW STATE -->
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-md flex flex-col gap-1.5 cursor-pointer bg-gradient-to-br from-surface-container-lowest via-surface-container-lowest to-surface-container-high transition-all">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-code text-code text-primary font-medium">CORE-104</span>
+<!-- Amber Priority Dot -->
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container ring-2 ring-surface-container-high"></span>
+</div>
+<div class="flex items-center gap-1">
+<span class="font-code text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">auth</span>
+<span class="font-code text-[10px] text-on-surface bg-surface-container px-1.5 py-0.5 rounded">active</span>
+</div>
+</div>
+<div class="font-body-md text-body-md text-primary font-medium leading-snug">
+            Migrate session token rotation to WebCrypto API
+          </div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-0.5 text-primary">
+<span class="material-symbols-outlined text-[13px]">check_box</span>
+<span class="font-code text-[11px]">3/5</span>
+</span>
+<span class="flex items-center gap-0.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>Today</span>
+</span>
+</div>
+<img class="w-5 h-5 rounded-full object-cover grayscale" data-alt="Monochrome studio portrait of Japanese software engineer bathed in gentle directional natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXXWomXwW4dBVAgTcLZS3AmFLZy3pJegxMph7gr3V5XNvEnPkDvdUkTD9XBjmz9amEVDpJKZWwEK4loJ_bJFTY7ES9t3KGAhNb6GkkCLwqqMKee-xqrNtZZEJZzktxGPO__2jDO_2_Oh6jf8NuZVVUXffHDf1NbV4gTKb8bSnM-dGAnsftcJOqURqDfqEMuoqUGuKcE7ni54k0jrRvSWEsrJ-3ZrlKc_2Hx-Gxt-gVdHpabOjjLXJU"/>
+</div>
+</div>
+<!-- CARD STATE 2: EXPANDED SUBTASK CHECKLIST & INLINE EDITING STATE -->
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm flex flex-col gap-2">
+<!-- Card Header Info -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-code text-code text-secondary font-medium">SYNC-19</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-code text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">state</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface font-medium leading-snug">
+            State tree reconciliation during mobile offline mode
+          </div>
+<!-- Expanded Interactive Subtask Checklist -->
+<div class="bg-surface-container-low p-2 rounded-md flex flex-col gap-1.5">
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant pb-1">
+<span>Subtasks</span>
+<span class="font-code text-[10px]">2 of 4</span>
+</div>
+<!-- Subtask 1: Completed -->
+<label class="flex items-start gap-2 cursor-pointer group">
+<input checked="" class="mt-0.5 accent-primary rounded-sm" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-outline line-through leading-tight">Cache invalidation strategy</span>
+</label>
+<!-- Subtask 2: Completed -->
+<label class="flex items-start gap-2 cursor-pointer group">
+<input checked="" class="mt-0.5 accent-primary rounded-sm" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-outline line-through leading-tight">Implement optimistic mutation queue</span>
+</label>
+<!-- Subtask 3: Open -->
+<label class="flex items-start gap-2 cursor-pointer group">
+<input class="mt-0.5 accent-primary rounded-sm" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface leading-tight">Header layout review &amp; retry toast</span>
+</label>
+<!-- Inline Quick Add Input -->
+<div class="flex items-center gap-1.5 pt-1">
+<span class="material-symbols-outlined text-[14px] text-outline">add_circle</span>
+<input class="w-full bg-transparent font-body-sm text-body-sm text-on-surface placeholder-outline focus:outline-none" placeholder="Add subtask..." type="text"/>
+</div>
+</div>
+<!-- Bottom Metadata -->
+<div class="flex items-center justify-between pt-0.5">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">calendar_today</span>
+<span>Tomorrow</span>
+</span>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container-high flex items-center justify-center font-code text-[9px] text-on-surface">TA</div>
+</div>
+</div>
+<!-- Card 3: Standard In-Progress Item -->
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm flex flex-col gap-1.5 cursor-pointer active:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-code text-code text-secondary font-medium">ENG-215</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+<span class="font-code text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">pwa</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface leading-snug">
+            Configure ServiceWorker background sync for offline dispatch
+          </div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">check_box</span>
+<span>1/2</span>
+</span>
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">calendar_today</span>
+<span>Oct 16</span>
+</span>
+</div>
+<img class="w-5 h-5 rounded-full object-cover grayscale" data-alt="Monochrome artistic profile photo of woman software architect in clean studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3ZjggoB0cU7W-MvEQ1Pt8ZzSUQ-2Fr0ftNF-PChoRvtFGOrs-6qSSDlVPFPGQNuAImVHnCw47eKUC2UPyAIABSJsNNJOSS6SaVAXaJswqam3Cc55CxnRjh2B5Igd7wTjaWyW7SgMDxZ9q7BDnBf9Y7YHseE-vznAORvjdvRXhrfMXjPnjgd6Acqg-ToigBm90V8DAxfyINO3j0OFiAMHbr9Iz2lj_d1r1cxpCrHUjVqa1MIUbAImk"/>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUMN 3: REVIEW -->
+<div class="snap-center shrink-0 w-[82vw] max-w-[320px] flex flex-col bg-surface-container-low rounded-xl p-3" id="col-review">
+<!-- Column Header -->
+<div class="flex items-center justify-between pb-2.5">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface font-medium tracking-wider uppercase">Review</span>
+<span class="font-code text-[11px] text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">02</span>
+</div>
+<button class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Add task">
+<span class="material-symbols-outlined text-[15px]">add</span>
+</button>
+</div>
+<!-- Card Stack -->
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm flex flex-col gap-1.5 cursor-pointer active:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-code text-code text-secondary font-medium">ZEN-82</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-code text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">ui</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface leading-snug">
+            Harmonize micro-typography baselines with JetBrains Mono code chips
+          </div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">rate_review</span>
+<span>2 approvals</span>
+</span>
+</div>
+<img class="w-5 h-5 rounded-full object-cover grayscale" data-alt="Monochrome photo of serene designer with glasses in minimalist modern workspace" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHJ0A9lJvXs_UxJp59i69sBykb0RN-PUGGa59fCQoN289jVnjJdWSsQU5rhDd9hUa3T_ZLmCBG_-cvnmSmgzJuUXqteo0XEOJkB1KQOrpoTjy8N0foHk2BthuohDKzVbwbOO4ImFxBc7TPBlK1KPLdNk9Xoi00QZOdqPQc0_zSCt2goJ7Xik7vVy8hE6E585_8idR66PELIqYVXS18Ds2eFySWBAdg1RBTkU6axHUSaWHYpz7n3m7d"/>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm flex flex-col gap-1.5 cursor-pointer active:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-code text-code text-secondary font-medium">API-49</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+</div>
+<span class="font-code text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">backend</span>
+</div>
+<div class="font-body-md text-body-md text-on-surface leading-snug">
+            Rate limiting headers alignment for Edge Workers
+          </div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-secondary">
+<span class="flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[13px]">check_box</span>
+<span>4/4</span>
+</span>
+</div>
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center font-code text-[9px] text-on-surface-variant">SS</div>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUMN 4: DONE -->
+<div class="snap-center shrink-0 w-[82vw] max-w-[320px] flex flex-col bg-surface-container-low rounded-xl p-3" id="col-done">
+<!-- Column Header -->
+<div class="flex items-center justify-between pb-2.5">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface font-medium tracking-wider uppercase">Done</span>
+<span class="font-code text-[11px] text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">08</span>
+</div>
+<button class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Add task">
+<span class="material-symbols-outlined text-[15px]">add</span>
+</button>
+</div>
+<!-- Card Stack -->
+<div class="flex flex-col gap-2">
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm flex flex-col gap-1.5 opacity-80 cursor-pointer active:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-code text-code text-outline font-medium line-through">CORE-99</span>
+<span class="material-symbols-outlined text-[12px] text-secondary">check_circle</span>
+</div>
+<span class="font-code text-[10px] text-outline bg-surface-container-low px-1.5 py-0.5 rounded">infra</span>
+</div>
+<div class="font-body-md text-body-md text-outline line-through leading-snug">
+            Configure automated CI release branch protection rules
+          </div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-outline">Shipped yesterday</span>
+<div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center font-code text-[9px] text-outline">YS</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-2.5 rounded-lg shadow-sm flex flex-col gap-1.5 opacity-80 cursor-pointer active:bg-surface-container-low transition-colors">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-code text-code text-outline font-medium line-through">SYS-12</span>
+<span class="material-symbols-outlined text-[12px] text-secondary">check_circle</span>
+</div>
+<span class="font-code text-[10px] text-outline bg-surface-container-low px-1.5 py-0.5 rounded">design</span>
+</div>
+<div class="font-body-md text-body-md text-outline line-through leading-snug">
+            Extract organic neutral tokens for Rice Paper palette
+          </div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-label-sm text-label-sm text-outline">Shipped Oct 12</span>
+<img class="w-5 h-5 rounded-full object-cover grayscale opacity-75" data-alt="Monochrome portrait of thoughtful Japanese creative director with subtle natural shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOKv8i_o2FDPwGlZkjUIKuthW9hZxp8q5foa4pr2hIIdWpSt_ypuC-qDAPlG95V3jXT3bHbfEPf3Y4V_1AEO_vbcvXsnlFM0UPJhh-0KzaZanB8FRSZMFy-G7R03xyrpK3jdQplqxtRLH4vEmMrG0OHtbku0-NyNzFpFro971zMoSFTwy-4nIjV3FppVa1-vh3mWtpK7UhSbr2f8rpqRGJcWUUdVkeMKaNpf5q-ZVrcxzsEN4MfeG-"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Workspace Status Pill / Zen Quote Delight -->
+<div class="px-gutter pb-4">
+<div class="flex items-center justify-between px-3 py-2 bg-surface-container-low rounded-lg shadow-sm">
+<div class="flex items-center gap-2">
+<span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sprint 34: 4 days remaining</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-code text-[11px] text-secondary">18 issues</span>
+<span class="text-outline text-[12px]">•</span>
+<span class="font-label-sm text-label-sm text-on-surface">57% Done</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  function scrollToColumn(columnId) {
+    const col = document.getElementById(columnId);
+    if (col) {
+      col.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+    }
+  }
+
+  // Keyboard shortcut listener for minimal Zen command search
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'k' && (e.metaKey || e.ctrlKey)) {
+      e.preventDefault();
+      const input = document.querySelector('input[type="text"]');
+      if (input) input.focus();
+    }
+  });
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.03)]" data-active-classes="text-primary font-medium bg-surface-container-low"><div class="flex items-center justify-around h-16 px-gutter"><a aria-current="page" class="flex flex-col items-center justify-center w-14 h-12 rounded transition-colors text-primary font-medium bg-surface-container-low" data-path="board" href="#"><span class="material-symbols-outlined text-[20px]">view_kanban</span><span class="font-label-sm text-label-sm mt-0.5">Board</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="list" href="#"><span class="material-symbols-outlined text-[20px]">format_list_bulleted</span><span class="font-label-sm text-label-sm mt-0.5">List</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="search" href="#"><span class="material-symbols-outlined text-[20px]">saved_search</span><span class="font-label-sm text-label-sm mt-0.5">Search</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="activity" href="#"><span class="material-symbols-outlined text-[20px]">history_toggle_off</span><span class="font-label-sm text-label-sm mt-0.5">Activity</span></a><a class="flex flex-col items-center justify-center w-14 h-12 rounded text-on-surface-variant hover:text-on-surface transition-colors" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">tune</span><span class="font-label-sm text-label-sm mt-0.5">Settings</span></a></div></nav></body></html>

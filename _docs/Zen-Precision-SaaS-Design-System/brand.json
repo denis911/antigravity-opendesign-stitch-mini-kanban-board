@@ -1,0 +1,134 @@
+{
+  "name": "Zen Precision SaaS",
+  "tagline": "This design system synthesizes traditional Japanese wabi-sabi reduction with the hyper-dense, keyboard-driven utility of modern high-performance engineering suites (Linear, Raycast).",
+  "description": "Our aesthetic is centered on intentional whitespace and reducing visual noise. There are no harsh black borders or bright neon colors. Containers use smooth, rounded corners and soft, muted tones like slate, warm grays, and charcoal text. Empty states shouldn't feel blank; they should feature light dashed guidelines. Interactions and transitions should feel fluid and deliberate, creating a calm, distraction-free environment for organizing work. Zen approach - simplicity wins.",
+  "sourceUrl": "http://127.0.0.1:8000/",
+  "logo": {
+    "primary": null,
+    "alternates": [],
+    "notes": "No logo supplied in pasted DESIGN.md."
+  },
+  "colors": [
+    {
+      "role": "background",
+      "hex": "#f3f2ec",
+      "oklch": "",
+      "name": "Sand  Sub surface / Neutral Light :",
+      "usage": "page canvas"
+    },
+    {
+      "role": "foreground",
+      "hex": "#07080a",
+      "oklch": "",
+      "name": "Primary",
+      "usage": "body text and headings"
+    },
+    {
+      "role": "accent",
+      "hex": "#100600",
+      "oklch": "",
+      "name": "Tertiary",
+      "usage": "primary actions and emphasis"
+    },
+    {
+      "role": "surface",
+      "hex": "#faf9f5",
+      "oklch": "",
+      "name": "Surface",
+      "usage": "cards and panels"
+    },
+    {
+      "role": "muted",
+      "hex": "#5b5e64",
+      "oklch": "",
+      "name": "Secondary",
+      "usage": "secondary text and metadata"
+    },
+    {
+      "role": "border",
+      "hex": "#76777b",
+      "oklch": "",
+      "name": "Outline",
+      "usage": "rules and dividers"
+    },
+    {
+      "role": "accent-secondary",
+      "hex": "#e0e2e9",
+      "oklch": "",
+      "name": "Secondary container",
+      "usage": "secondary actions and links"
+    }
+  ],
+  "typography": {
+    "display": {
+      "family": "Inter",
+      "fallbacks": [
+        "system-ui",
+        "-apple-system",
+        "Segoe UI",
+        "Helvetica Neue",
+        "Arial",
+        "sans-serif"
+      ],
+      "weights": [
+        400,
+        700
+      ]
+    },
+    "body": {
+      "family": "Inter",
+      "fallbacks": [
+        "system-ui",
+        "-apple-system",
+        "Segoe UI",
+        "Helvetica Neue",
+        "Arial",
+        "sans-serif"
+      ],
+      "weights": [
+        400,
+        700
+      ]
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "fallbacks": [
+        "ui-monospace",
+        "SFMono-Regular",
+        "Menlo",
+        "monospace"
+      ],
+      "weights": [
+        400,
+        700
+      ]
+    }
+  },
+  "voice": {
+    "adjectives": [],
+    "tone": "Our aesthetic is centered on intentional whitespace and reducing visual noise.",
+    "messagingPillars": [
+      "Our aesthetic is centered on intentional whitespace and reducing visual noise. There are no harsh black borders or bright neon colors. Containers use smooth, rounded corners and soft, muted tones like slate, warm grays, and charcoal text. Empty states shouldn't feel blank; they should feature light dashed guidelines. Interactions and transitions should feel fluid and deliberate, creating a calm, distraction-free environment for organizing work. Zen approach - simplicity wins.",
+      "This design system synthesizes traditional Japanese wabi-sabi reduction with the hyper-dense, keyboard-driven utility of modern high-performance engineering suites (Linear, Raycast). The brand personality is disciplined, quiet, and profoundly intentional. It rejects decorative noise, loud saturated accents, and heavy containerization in favor of spatial clarity, restrained line-work, and natural paper-like warmth.\n\nThe interface is engineered for knowledge workers, developers, and product orchestrators who spend 8+ hours a day inside dense data environments. The emotional response is one of visual deceleration and structural mastery: serene, unhurried, yet uncompromisingly rapid and exact.\n\nVisually, the style merges **Warm Minimalism** with **Structural Monasticism**:\n- Organic neutral surfaces referencing washi (rice paper), raw unbleached linen, and pale river stones.\n- Deep calligraphic sumi ink contrasts for effortless legibility.\n- Hairline structural framing, flat surfaces, and subtle, dry, low-diffusion contact edges rather than artificial atmospheric glows."
+    ],
+    "vocabulary": {
+      "use": [],
+      "avoid": []
+    }
+  },
+  "imagery": {
+    "style": "",
+    "subjects": [],
+    "treatment": "",
+    "avoid": [],
+    "samples": []
+  },
+  "layout": {
+    "radius": "0.125rem",
+    "borderWeight": "1px",
+    "spacing": "0.75rem",
+    "postureRules": [
+      "Component kit should cover: Background, Search, Items, Issue, Typography, Diameter, Unset, Todo, In, Done, Canceled, Border."
+    ]
+  }
+}
