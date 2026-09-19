@@ -72,10 +72,12 @@
 </header>
 
 <!-- Main Kanban Board Canvas -->
-<main class="flex-1 flex flex-col w-full max-w-7xl mx-auto px-gutter py-5">
-  <!-- Horizontal Scrolling Columns Track -->
+<main class="flex-1 flex flex-col w-full max-w-7xl mx-auto px-gutter py-4 md:py-6">
+  <!-- Responsive Columns Track:
+       - Mobile/Tablet (< lg): swipeable snap-x scrollable track with center snapping for focus
+       - Desktop (lg: / xl:): horizontal flexible row wrapper with overflow-x-auto, keeping tiles aligned side-by-side -->
   <div id="board-track"
-       class="flex gap-3.5 overflow-x-auto snap-x snap-mandatory pb-6 pt-1 no-scrollbar items-start">
+       class="flex flex-row items-start gap-3 md:gap-4 overflow-x-auto snap-x snap-mandatory lg:snap-none pb-6 pt-1 no-scrollbar w-full">
     {% for column in columns %}
       {% include "components/column.html" %}
     {% endfor %}
@@ -83,7 +85,7 @@
 
   <!-- Bottom Workspace Status Bar -->
   <div class="mt-auto pt-3 border-t border-hairline">
-    <div class="flex items-center justify-between px-3 py-1.5 bg-surface-container-low rounded-xs border border-hairline text-xs shadow-zen-xs">
+    <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 px-3 py-2 bg-surface-container-low rounded-xs border border-hairline text-xs shadow-zen-xs">
       <div class="flex items-center gap-2">
         <span class="w-1.5 h-1.5 rounded-full bg-lichen"></span>
         <span class="text-on-surface-variant font-mono text-[11px]">Zen Flow State</span>
@@ -97,8 +99,8 @@
   </div>
 </main>
 
-<!-- Bottom Mobile Navigation Bar -->
-<nav class="sticky bottom-0 w-full z-40 pb-safe bg-surface/90 backdrop-blur-xl border-t border-hairline">
+<!-- Bottom Mobile/Tablet Navigation Bar (hidden on desktop lg: screens) -->
+<nav class="sticky bottom-0 w-full z-40 pb-safe bg-surface/90 backdrop-blur-xl border-t border-hairline lg:hidden">
   <div class="max-w-7xl mx-auto flex items-center justify-around h-13 px-gutter">
     <a href="#" class="flex flex-col items-center justify-center py-1 px-3 rounded-xs text-primary font-medium bg-surface-container-low border border-hairline/60">
       <span class="material-symbols-outlined text-[18px]">view_kanban</span>
