@@ -1,6 +1,6 @@
 {# Inline Add Card Form #}
 <form id="form-add-{{ column_id }}"
-      class="bg-surface-container-lowest p-2.5 rounded-lg border border-outline-variant/40 shadow-xs flex flex-col gap-2"
+      class="bg-surface-container-lowest p-2.5 rounded-sm border border-hairline shadow-zen-xs flex flex-col gap-2"
       hx-post="/cards"
       hx-target="#cards-{{ column_id }}"
       hx-swap="beforeend">
@@ -9,7 +9,7 @@
             required
             rows="2"
             autofocus
-            class="w-full bg-transparent text-on-surface text-xs placeholder-outline focus:outline-none resize-none border-b border-outline-variant/30 focus:border-on-surface pb-1"
+            class="w-full bg-transparent text-on-surface text-xs placeholder-outline focus:outline-none resize-none border-b border-hairline focus:border-primary pb-1 tracking-tight"
             placeholder="What needs to be done?">{{ title or '' }}</textarea>
 
   {% if error %}
@@ -20,11 +20,11 @@
 
   <div class="flex items-center justify-between pt-1">
     <button type="submit"
-            class="h-7 px-3 rounded bg-primary text-on-primary hover:bg-primary-container font-mono text-xs font-medium transition-colors">
+            class="h-7 px-3 rounded-xs bg-primary text-on-primary hover:bg-primary-container font-mono text-xs font-medium transition-colors shadow-zen-xs">
       Add
     </button>
     <button type="button"
-            class="h-7 px-2.5 rounded text-secondary hover:text-on-surface font-mono text-xs transition-colors"
+            class="h-7 px-2.5 rounded-xs text-secondary hover:text-on-surface font-mono text-xs transition-colors"
             hx-get="/cards/cancel-form?col_id={{ column_id }}"
             hx-target="#add-card-container-{{ column_id }}"
             hx-swap="innerHTML">

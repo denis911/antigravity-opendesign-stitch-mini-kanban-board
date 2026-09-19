@@ -1,6 +1,6 @@
 {# Individual Card Component matching Stitch Zen Design #}
 <div id="card-{{ card.id }}"
-     class="kanban-card group bg-surface-container-lowest p-3 rounded-lg shadow-sm border border-outline-variant/30 flex flex-col gap-2 cursor-pointer hover:border-outline/40 hover:shadow transition-all relative"
+     class="kanban-card group bg-surface-container-lowest p-2.5 rounded-sm shadow-zen-xs border border-hairline flex flex-col gap-1.5 cursor-pointer hover:border-hairline-hover hover:shadow-zen transition-all relative"
      data-card-id="{{ card.id }}"
      hx-get="/cards/{{ card.id }}/edit"
      hx-target="#modal-container"
@@ -13,30 +13,30 @@
         {{ card.code_id or "TASK-" ~ card.id[-4:] }}
       </span>
 
-      <!-- Priority Color Dot -->
+      <!-- Priority Color Dot (6px subtle geometric solid dot) -->
       {% if card.color == 'red' %}
-        <span class="w-2 h-2 rounded-full bg-cinnabar" title="Priority: Urgent"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-cinnabar" title="Priority: Urgent"></span>
       {% elif card.color == 'yellow' %}
-        <span class="w-2 h-2 rounded-full bg-amber-raw" title="Priority: In Progress"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-amber-raw" title="Priority: In Progress"></span>
       {% elif card.color == 'green' %}
-        <span class="w-2 h-2 rounded-full bg-lichen" title="Priority: Done"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-lichen" title="Priority: Done"></span>
       {% elif card.color == 'blue' %}
-        <span class="w-2 h-2 rounded-full bg-indigo-stone" title="Priority: Info"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-indigo-stone" title="Priority: Info"></span>
       {% else %}
-        <span class="w-2 h-2 rounded-full bg-outline" title="Priority: Normal"></span>
+        <span class="w-1.5 h-1.5 rounded-full bg-outline" title="Priority: Normal"></span>
       {% endif %}
     </div>
 
     <div class="flex items-center gap-1">
       {% if card.tag %}
-        <span class="font-mono text-[10px] text-on-surface-variant bg-surface-container-low px-1.5 py-0.5 rounded">
+        <span class="font-mono text-[10px] text-secondary bg-surface-container-low px-1.5 py-0.5 rounded-xs border border-hairline">
           {{ card.tag }}
         </span>
       {% endif %}
 
       <!-- Delete Button with Confirmation -->
       <button type="button"
-              class="delete-card-btn opacity-70 sm:opacity-0 sm:group-hover:opacity-100 w-5 h-5 flex items-center justify-center rounded text-outline hover:text-cinnabar hover:bg-error-container/30 transition-all"
+              class="delete-card-btn opacity-70 sm:opacity-0 sm:group-hover:opacity-100 w-5 h-5 flex items-center justify-center rounded-xs text-outline hover:text-cinnabar hover:bg-error-container/30 transition-all"
               title="Delete card"
               aria-label="Delete card {{ card.title }}"
               hx-delete="/cards/{{ card.id }}"
@@ -50,12 +50,12 @@
   </div>
 
   <!-- Card Title -->
-  <div class="text-sm font-medium text-on-surface leading-snug text-left">
+  <div class="text-[13px] font-normal text-on-surface leading-snug text-left tracking-[-0.002em]">
     {{ card.title }}
   </div>
 
   {% if card.description %}
-    <div class="text-xs text-on-surface-variant/80 line-clamp-2 text-left">
+    <div class="text-xs text-on-surface-variant/80 line-clamp-2 text-left leading-normal">
       {{ card.description }}
     </div>
   {% endif %}
@@ -63,14 +63,14 @@
   <!-- Card Footer: Metadata & Assignee -->
   <div class="flex items-center justify-between pt-1 text-xs text-secondary">
     <div class="flex items-center gap-2">
-      <span class="flex items-center gap-0.5">
+      <span class="flex items-center gap-0.5 text-[11px] font-mono">
         <span class="material-symbols-outlined text-[13px]">calendar_today</span>
         <span>Oct 18</span>
       </span>
     </div>
 
     <!-- Assignee avatar / initials badge -->
-    <div class="w-5 h-5 rounded-full bg-surface-container flex items-center justify-center font-mono text-[9px] text-on-surface-variant font-medium">
+    <div class="w-5 h-5 rounded-full bg-surface-container border border-hairline flex items-center justify-center font-mono text-[9px] text-on-surface-variant font-medium">
       {{ card.assignee or "ZN" }}
     </div>
   </div>

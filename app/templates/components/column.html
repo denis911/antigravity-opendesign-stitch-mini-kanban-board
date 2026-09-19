@@ -1,21 +1,21 @@
 {# Column Component matching Stitch Zen Design #}
 <div id="{{ column.id }}"
-     class="kanban-column snap-center shrink-0 w-[85vw] sm:w-[320px] max-w-[340px] flex flex-col bg-surface-container-low rounded-xl p-3 border border-outline-variant/20 shadow-sm"
+     class="kanban-column snap-center shrink-0 w-[85vw] sm:w-[320px] max-w-[340px] flex flex-col bg-surface-container-low rounded-lg p-3 border border-hairline shadow-zen-xs"
      data-column-id="{{ column.id }}">
 
   <!-- Column Header -->
-  <div class="flex items-center justify-between pb-3 border-b border-outline-variant/20 mb-3">
+  <div class="flex items-center justify-between pb-2.5 border-b border-hairline mb-2.5">
     <div class="flex items-center gap-2">
       <span class="font-mono text-xs font-semibold text-on-surface tracking-wider uppercase">
         {{ column.title }}
       </span>
       <span id="counter-{{ column.id }}"
-            class="font-mono text-[11px] text-on-surface-variant bg-surface-container px-2 py-0.5 rounded font-medium">
+            class="font-mono text-[11px] text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded-xs font-medium border border-hairline">
         {{ "%02d" | format(column.cards|length) }}
       </span>
     </div>
 
-    <button class="w-6 h-6 flex items-center justify-center rounded hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors"
+    <button class="w-6 h-6 flex items-center justify-center rounded-xs hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors"
             title="Add card"
             aria-label="Add card to {{ column.title }}"
             hx-get="/cards/new?col_id={{ column.id }}"
@@ -34,15 +34,15 @@
     {% endfor %}
 
     {% if column.cards|length == 0 %}
-      <div id="empty-{{ column.id }}" class="empty-placeholder text-center py-8 text-xs text-outline font-mono border-2 border-dashed border-outline-variant/40 rounded-lg">
+      <div id="empty-{{ column.id }}" class="empty-placeholder text-center py-7 text-xs text-outline font-mono border border-dashed border-outline-variant/60 rounded-xs bg-surface-container-lowest/40">
         Drop cards here
       </div>
     {% endif %}
   </div>
 
   <!-- Bottom Add Card Container -->
-  <div id="add-card-container-{{ column.id }}" class="mt-2 pt-2 border-t border-outline-variant/20">
-    <button class="w-full py-1.5 px-2.5 rounded-lg border border-dashed border-outline-variant/50 hover:border-outline text-secondary hover:text-on-surface font-mono text-xs flex items-center justify-center gap-1.5 hover:bg-surface-container transition-all"
+  <div id="add-card-container-{{ column.id }}" class="mt-2 pt-2 border-t border-hairline">
+    <button class="w-full py-1.5 px-2.5 rounded-xs border border-dashed border-hairline hover:border-hairline-hover text-secondary hover:text-on-surface font-mono text-xs flex items-center justify-center gap-1.5 hover:bg-surface-container/60 transition-all"
             hx-get="/cards/new?col_id={{ column.id }}"
             hx-target="#add-card-container-{{ column.id }}"
             hx-swap="innerHTML">

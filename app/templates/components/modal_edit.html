@@ -3,13 +3,13 @@
      class="fixed inset-0 bg-on-surface/40 backdrop-blur-xs z-50 flex items-center justify-center p-4 transition-opacity"
      onclick="if(event.target === this) document.getElementById('modal-container').innerHTML = '';">
 
-  <div class="bg-surface-container-lowest max-w-lg w-full rounded-xl border border-outline-variant/30 shadow-xl p-5 flex flex-col gap-4 relative"
+  <div class="bg-surface-container-lowest max-w-lg w-full rounded-md border border-hairline shadow-zen-lg p-5 flex flex-col gap-4 relative"
        role="dialog"
        aria-modal="true"
        aria-labelledby="modal-card-title">
 
     <!-- Modal Header -->
-    <div class="flex items-center justify-between pb-2 border-b border-outline-variant/20">
+    <div class="flex items-center justify-between pb-2 border-b border-hairline">
       <div class="flex items-center gap-2">
         <span class="font-mono text-xs text-secondary font-semibold">
           {{ card.code_id or "TASK-" ~ card.id[-4:] }}
@@ -21,7 +21,7 @@
       </div>
 
       <button type="button"
-              class="w-7 h-7 flex items-center justify-center rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"
+              class="w-7 h-7 flex items-center justify-center rounded-xs text-secondary hover:text-on-surface hover:bg-surface-container transition-colors"
               onclick="document.getElementById('modal-container').innerHTML = '';"
               aria-label="Close dialog">
         <span class="material-symbols-outlined text-[18px]">close</span>
@@ -45,7 +45,7 @@
                name="title"
                required
                value="{{ card.title }}"
-               class="w-full bg-surface-container-low/50 border border-outline-variant/40 focus:border-on-surface rounded-lg px-3 py-2 text-sm text-on-surface placeholder-outline focus:outline-none focus:ring-1 focus:ring-on-surface/10 transition-colors"
+               class="w-full bg-surface-container-low/50 border border-hairline focus:border-primary rounded-xs px-3 py-1.5 text-xs text-on-surface placeholder-outline focus:outline-none transition-colors"
                placeholder="Task title"/>
         {% if error %}
           <div id="edit-form-error" class="text-xs text-cinnabar font-mono mt-0.5">
@@ -62,7 +62,7 @@
         <textarea id="edit-desc"
                   name="description"
                   rows="3"
-                  class="w-full bg-surface-container-low/50 border border-outline-variant/40 focus:border-on-surface rounded-lg px-3 py-2 text-xs text-on-surface placeholder-outline focus:outline-none focus:ring-1 focus:ring-on-surface/10 resize-none transition-colors"
+                  class="w-full bg-surface-container-low/50 border border-hairline focus:border-primary rounded-xs px-3 py-1.5 text-xs text-on-surface placeholder-outline focus:outline-none resize-none transition-colors"
                   placeholder="Add detailed context or checklist...">{{ card.description or '' }}</textarea>
       </div>
 
@@ -73,51 +73,51 @@
         </label>
         <div class="flex flex-wrap items-center gap-2">
           <!-- Default -->
-          <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-on-surface has-[:checked]:bg-surface-container-low font-mono">
+          <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-xs border border-hairline text-xs cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-on-surface has-[:checked]:bg-surface-container-low font-mono">
             <input type="radio" name="color" value="default" class="sr-only" {% if card.color == 'default' or not card.color %}checked{% endif %}/>
-            <span class="w-2.5 h-2.5 rounded-full bg-outline"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
             <span>Normal</span>
           </label>
 
           <!-- Red / Urgent -->
-          <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-cinnabar has-[:checked]:bg-error-container/20 font-mono">
+          <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-xs border border-hairline text-xs cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-cinnabar has-[:checked]:bg-error-container/20 font-mono">
             <input type="radio" name="color" value="red" class="sr-only" {% if card.color == 'red' %}checked{% endif %}/>
-            <span class="w-2.5 h-2.5 rounded-full bg-cinnabar"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-cinnabar"></span>
             <span>Urgent</span>
           </label>
 
           <!-- Yellow / Active -->
-          <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-amber-raw has-[:checked]:bg-amber-100/30 font-mono">
+          <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-xs border border-hairline text-xs cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-amber-raw has-[:checked]:bg-amber-100/30 font-mono">
             <input type="radio" name="color" value="yellow" class="sr-only" {% if card.color == 'yellow' %}checked{% endif %}/>
-            <span class="w-2.5 h-2.5 rounded-full bg-amber-raw"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-amber-raw"></span>
             <span>Active</span>
           </label>
 
           <!-- Green / Done -->
-          <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-lichen has-[:checked]:bg-green-100/30 font-mono">
+          <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-xs border border-hairline text-xs cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-lichen has-[:checked]:bg-green-100/30 font-mono">
             <input type="radio" name="color" value="green" class="sr-only" {% if card.color == 'green' %}checked{% endif %}/>
-            <span class="w-2.5 h-2.5 rounded-full bg-lichen"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-lichen"></span>
             <span>Lichen</span>
           </label>
 
           <!-- Blue / Info -->
-          <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-md border border-outline-variant/30 text-xs cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-indigo-stone has-[:checked]:bg-blue-100/30 font-mono">
+          <label class="flex items-center gap-1.5 px-2.5 py-1 rounded-xs border border-hairline text-xs cursor-pointer hover:bg-surface-container transition-colors has-[:checked]:border-indigo-stone has-[:checked]:bg-blue-100/30 font-mono">
             <input type="radio" name="color" value="blue" class="sr-only" {% if card.color == 'blue' %}checked{% endif %}/>
-            <span class="w-2.5 h-2.5 rounded-full bg-indigo-stone"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-stone"></span>
             <span>Stone</span>
           </label>
         </div>
       </div>
 
       <!-- Action Buttons -->
-      <div class="flex items-center justify-end gap-2 pt-2 border-t border-outline-variant/20 mt-1">
+      <div class="flex items-center justify-end gap-2 pt-2 border-t border-hairline mt-1">
         <button type="button"
-                class="px-3 py-1.5 rounded-lg text-secondary hover:text-on-surface hover:bg-surface-container font-mono text-xs transition-colors"
+                class="px-3 py-1.5 rounded-xs text-secondary hover:text-on-surface hover:bg-surface-container font-mono text-xs transition-colors"
                 onclick="document.getElementById('modal-container').innerHTML = '';">
           Cancel
         </button>
         <button type="submit"
-                class="px-4 py-1.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container font-mono text-xs font-medium transition-colors shadow-xs">
+                class="px-4 py-1.5 rounded-xs bg-primary text-on-primary hover:bg-primary-container font-mono text-xs font-medium transition-colors shadow-zen-xs">
           Save Changes
         </button>
       </div>
