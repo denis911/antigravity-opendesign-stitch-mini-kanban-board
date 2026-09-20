@@ -97,11 +97,16 @@ Cross-platform helper commands are available via `python manage.py` (or `make`):
 - [x] **Phase 3: Local Deployment via Docker Compose (Completed)**
   - [x] Issue #11: Multi-stage Dockerfile with `uv` and docker-compose.yml
   - [x] Issue #12: Healthchecks, dev scripts & deployment verification
+- [x] **Phase 4: Zen Precision SaaS Design System & Responsive Architecture (Completed)**
+  - [x] Issue #13: Implement Zen Precision SaaS design system refreshment
+  - [x] Issue #14: Responsive board container layout across mobile, tablet, and desktop viewports
 
 ---
 
-## Documentation
+## Documentation & Presentation
 
 - [`_docs/spec.md`](_docs/spec.md) - Full technical specification and API hypermedia contract
 - [`_docs/process.md`](_docs/process.md) - Spec-driven development process & roles
+- [`_docs/Zen-Precision-SaaS-Design-System/`](_docs/Zen-Precision-SaaS-Design-System/) - Unified Zen Precision design tokens, typography, and color manifest
+- [`_docs/PPT/zen-precision-kanban-presentation.pptx`](_docs/PPT/zen-precision-kanban-presentation.pptx) - Project architecture and design system presentation deck
 - [`_docs/stitch_zen_minimalist_kanban_board/`](_docs/stitch_zen_minimalist_kanban_board/) - Stitch design tokens, colors, and layout reference
